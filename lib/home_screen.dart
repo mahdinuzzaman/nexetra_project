@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'profile_screen.dart';
+import 'jobboard_screen.dart';
+import 'appliedjob_screen.dart';
+import 'confirmedjob_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -27,12 +31,12 @@ class HomeScreen extends StatelessWidget {
               print("Selected: $value");
             },
             itemBuilder: (BuildContext context) {
-              return [
-                const PopupMenuItem(
+              return const [
+                PopupMenuItem(
                   value: 'Contact Us',
                   child: Text('Contact Us'),
                 ),
-                const PopupMenuItem(
+                PopupMenuItem(
                   value: 'About Us',
                   child: Text('About Us'),
                 ),
@@ -48,10 +52,30 @@ class HomeScreen extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                buildTopButton(Icons.person, "Profile"),
-                buildTopButton(Icons.dashboard, "Job Board"),
-                buildTopButton(Icons.task_alt, "Applied Job"),
-                buildTopButton(Icons.check_circle, "Confirmed Job"),
+                buildTopButton(Icons.person, "Profile", onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const ProfileScreen()),
+                  );
+                }),
+                buildTopButton(Icons.dashboard, "Job Board", onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const JobBoardScreen()),
+                  );
+                }),
+                buildTopButton(Icons.task_alt, "Applied Job", onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const AppliedJobScreen()),
+                  );
+                }),
+                buildTopButton(Icons.check_circle, "Confirmed Job", onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const ConfirmedJobScreen()),
+                  );
+                }),
               ],
             ),
           ),
@@ -60,16 +84,19 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget buildTopButton(IconData icon, String label) {
+  Widget buildTopButton(IconData icon, String label, {required VoidCallback onTap}) {
     return Column(
       children: [
-        Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            shape: BoxShape.circle,
+        GestureDetector(
+          onTap: onTap,
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              shape: BoxShape.circle,
+            ),
+            padding: const EdgeInsets.all(16),
+            child: Icon(icon, color: Colors.indigo),
           ),
-          padding: const EdgeInsets.all(16),
-          child: Icon(icon, color: Colors.indigo),
         ),
         const SizedBox(height: 8),
         Text(label, style: const TextStyle(color: Colors.black)),
