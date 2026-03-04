@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'home_screen.dart';
 
 class SignPage extends StatelessWidget {
   const SignPage({super.key});
@@ -65,7 +66,14 @@ class SignPage extends StatelessWidget {
             const SizedBox(height: 10),
 
             ElevatedButton(
-              onPressed: (){},
+              onPressed: () {
+                Navigator.push(
+                context,
+                MaterialPageRoute(
+                builder: (context) => const HomeScreen(),
+              ),
+            );
+              },
               child: Text(
                 "Submit",
 
