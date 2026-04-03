@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatelessWidget {
-const ProfileScreen({super.key});
+  const ProfileScreen({super.key});
 
 
   @override
@@ -36,7 +36,7 @@ const ProfileScreen({super.key});
             ),
           ),
 
-         const  SizedBox(height: 10.0),
+          const  SizedBox(height: 10.0),
 
           // Name
           Container(
