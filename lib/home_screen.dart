@@ -21,10 +21,10 @@ class HomeScreen extends StatelessWidget {
           const Spacer(),
           // Logo
           SizedBox(
-            width: 120,
-            height: 120,
+            width: 200,
+            height: 180,
             child: Image.asset(
-              "assets/splash.png",
+              "asset/images/img_1.png",
               fit: BoxFit.contain,
             ),
           ),

@@ -1,6 +1,14 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
-import 'splash.dart';
-
+import 'package:splash_screen/Role.dart';
+import 'package:splash_screen/SplashScreen.dart';
+import 'package:splash_screen/appliedjob_screen.dart';
+import 'package:splash_screen/confirmedjob_screen.dart';
+import 'package:splash_screen/createaccount.dart';
+import 'package:splash_screen/home_screen.dart';
+import 'package:splash_screen/jobboard_screen.dart';
+import 'package:splash_screen/loginInfluencer.dart';
+import 'profile_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,9 +19,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return   MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:  SplashScreen(),
+      theme: ThemeData(
+        primarySwatch:  Colors.yellow
+      ),
+      home: Splashscreen(),
     );
   }
 }
+
+
+
+
