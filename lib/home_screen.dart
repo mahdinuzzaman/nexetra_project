@@ -14,48 +14,41 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.indigo,
         elevation: 0,
-        toolbarHeight: 100,
-        title: const Text(
-          "Nexetra",
-          style: TextStyle(
-            fontSize: 24,
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        centerTitle: true,
-        foregroundColor: Colors.white,
-        actions: [
-          PopupMenuButton<String>(
-            onSelected: (value) {
-              print("Selected: $value");
-            },
-            itemBuilder: (BuildContext context) {
-              return const [
-                PopupMenuItem(
-                  value: 'Contact Us',
-                  child: Text('Contact Us'),
-                ),
-                PopupMenuItem(
-                  value: 'About Us',
-                  child: Text('About Us'),
-                ),
-              ];
-            },
-          ),
-        ],
+        toolbarHeight: 0,
       ),
       body: Column(
         children: [
+          const Spacer(),
+          // Logo
+          SizedBox(
+            width: 120,
+            height: 120,
+            child: Image.asset(
+              "assets/splash.png",
+              fit: BoxFit.contain,
+            ),
+          ),
+          const SizedBox(height: 16),
+          // Nexetra Text
+          const Text(
+            "Nexetra",
+            style: TextStyle(
+              fontSize: 28,
+              fontWeight: FontWeight.bold,
+              color: Colors.indigo,
+            ),
+          ),
+          const SizedBox(height: 48),
+
           Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 buildTopButton(Icons.person, "Profile", onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const ProfileScreen()),
+                    MaterialPageRoute(builder: (context) =>  const ProfileScreen()),
                   );
                 }),
                 buildTopButton(Icons.dashboard, "Job Board", onTap: () {
@@ -79,6 +72,7 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
+          const Spacer(flex: 2),
         ],
       ),
     );
@@ -90,12 +84,19 @@ class HomeScreen extends StatelessWidget {
         GestureDetector(
           onTap: onTap,
           child: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.white,
               shape: BoxShape.circle,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black12,
+                  blurRadius: 4,
+                  offset: Offset(2, 2),
+                ),
+              ],
             ),
             padding: const EdgeInsets.all(16),
-            child: Icon(icon, color: Colors.indigo),
+            child: Icon(icon, color: Colors.indigo, size: 28),
           ),
         ),
         const SizedBox(height: 8),
