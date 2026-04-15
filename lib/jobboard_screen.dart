@@ -7,357 +7,105 @@ class JobBoardScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "Job Board",
-          style: TextStyle(
-            fontSize: 30,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         backgroundColor: Colors.indigo,
         centerTitle: true,
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
-
       body: ListView(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         children: [
-
-
-          Card(
-
-            shape: RoundedRectangleBorder(
-              side: BorderSide(color: Colors.indigo),
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Padding(
-              padding: EdgeInsets.all(12),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-
-                  Text(
-                    "Pran Brand",
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-
-                  SizedBox(height: 6),
-
-                  Text("Promote Pran juices on Instagram"),
-
-                  SizedBox(height: 6),
-
-                  Text("Salary: 5000 Tk"),
-                  Text("Followers: 10 followers"),
-
-                  SizedBox(height: 10),
-
-                  SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text("Applied!")),
-                        );
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.indigo,
-                      ),
-                      child: Text(
-                        "Apply",
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
-                  ),
-
-                ],
-              ),
-            ),
-          ),
-
-          SizedBox(height: 16),
-
-
-          Card(
-            shape: RoundedRectangleBorder(
-              side: BorderSide(color: Colors.indigo),
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Padding(
-              padding: EdgeInsets.all(12),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-
-                  Text(
-                    "Aarong",
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-
-                  SizedBox(height: 6),
-
-                  Text("Collaboration for clothing collection"),
-
-                  SizedBox(height: 6),
-
-                  Text("Salary: 4000 Tk"),
-                  Text("Followers: 5 followers"),
-
-                  SizedBox(height: 10),
-
-                  SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text("Applied!")),
-                        );
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.indigo,
-                      ),
-                      child: Text(
-                        "Apply",
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
-                  ),
-
-                ],
-              ),
-            ),
-          ),
-
-          SizedBox(height: 16),
-
-          // 🔹 ROOPKOTHA CARD
-          Card(
-            shape: RoundedRectangleBorder(
-              side: BorderSide(color: Colors.indigo),
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Padding(
-              padding: EdgeInsets.all(12),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-
-                  Text(
-                    "RoopKotha Skincare",
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-
-                  SizedBox(height: 6),
-
-                  Text("Promote skincare products on TikTok"),
-
-                  SizedBox(height: 6),
-
-                  Text("Salary: 6000 Tk"),
-                  Text("Followers: 15 followers"),
-
-                  SizedBox(height: 10),
-
-                  SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text("Applied!")),
-                        );
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.indigo,
-                      ),
-                      child: Text(
-                        "Apply",
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
-                  ),
-
-                ],
-              ),
-            ),
-          ),
-          SizedBox(height: 16),
-
-
-          Card(
-            shape: RoundedRectangleBorder(
-              side: BorderSide(color: Colors.indigo),
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Padding(
-              padding: EdgeInsets.all(12),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-
-                  Text(
-                    "Bata",
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-
-                  SizedBox(height: 6),
-
-                  Text("Promote new footwear collection on Instagram"),
-
-                  SizedBox(height: 6),
-
-                  Text("Salary: 7000 Tk"),
-                  Text("Followers: 8000 followers"),
-
-                  SizedBox(height: 10),
-
-                  SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text("Applied!")),
-                        );
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.indigo,
-                      ),
-                      child: Text(
-                        "Apply",
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
-                  ),
-
-                ],
-              ),
-            ),
-          ),
-
-          SizedBox(height: 16),
-
-
-          Card(
-            shape: RoundedRectangleBorder(
-              side: BorderSide(color: Colors.indigo),
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Padding(
-              padding: EdgeInsets.all(12),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-
-                  Text(
-                    "Puma",
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-
-                  SizedBox(height: 6),
-
-                  Text("Promote sportswear campaign on TikTok"),
-
-                  SizedBox(height: 6),
-
-                  Text("Salary: 9000 Tk"),
-                  Text("Followers: 12000 followers"),
-
-                  SizedBox(height: 10),
-
-                  SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text("Applied!")),
-                        );
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.indigo,
-                      ),
-                      child: Text(
-                        "Apply",
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
-                  ),
-
-                ],
-              ),
-            ),
-          ),
-
-          SizedBox(height: 16),
-
-
-          Card(
-            shape: RoundedRectangleBorder(
-              side: BorderSide(color: Colors.indigo),
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Padding(
-              padding: EdgeInsets.all(12),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-
-                  Text(
-                    "Zara",
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-
-                  SizedBox(height: 6),
-
-                  Text("Promote new fashion arrivals on Instagram"),
-
-                  SizedBox(height: 6),
-
-                  Text("Salary: 11000 Tk"),
-                  Text("Followers: 15000 followers"),
-
-                  SizedBox(height: 10),
-
-                  SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text("Applied!")),
-                        );
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.indigo,
-                      ),
-                      child: Text(
-                        "Apply",
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
-                  ),
-
-                ],
-              ),
-            ),
-          ),
-
+          buildJobCard(context, "Pran Brand", "Promote Pran juices on Instagram", "5000 Tk", "10 followers", featured: true),
+          const SizedBox(height: 16),
+          buildJobCard(context, "Aarong", "Collaboration for clothing collection", "4000 Tk", "5 followers"),
+          const SizedBox(height: 16),
+          buildJobCard(context, "RoopKotha Skincare", "Promote skincare products on TikTok", "6000 Tk", "15 followers"),
+          const SizedBox(height: 16),
+          buildJobCard(context, "Bata", "Promote footwear collection", "7000 Tk", "8000 followers"),
+          const SizedBox(height: 16),
+          buildJobCard(context, "Puma", "Sportswear campaign", "9000 Tk", "12000 followers"),
+          const SizedBox(height: 16),
+          buildJobCard(context, "Zara", "Fashion arrivals", "11000 Tk", "15000 followers"),
         ],
+      ),
+    );
+  }
+
+  Widget buildJobCard(
+      BuildContext context,
+      String brand,
+      String desc,
+      String salary,
+      String followers, {
+        bool featured = false,
+      }) {
+    return Card(
+      shape: RoundedRectangleBorder(
+        side: const BorderSide(color: Colors.indigo, width: 2),
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Text(
+                  brand,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(width: 10),
+                if (featured)
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 8, vertical: 4),
+                    decoration: BoxDecoration(
+                      color: Colors.indigo,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: const Text(
+                      "🔥 FEATURED",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+              ],
+            ),
+            const SizedBox(height: 6),
+            Text(desc),
+            const SizedBox(height: 6),
+            Text("Salary: $salary"),
+            Text("Followers: $followers"),
+            const SizedBox(height: 10),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text("Applied!")),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.indigo,
+                ),
+                child: const Text(
+                  "Apply",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

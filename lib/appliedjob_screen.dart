@@ -5,158 +5,82 @@ class AppliedJobScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextStyle normalText = TextStyle(fontSize: 20);
+    TextStyle normalText = const TextStyle(fontSize: 16);
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "Applied Jobs",
-          style: TextStyle(
-            fontSize: 35,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         backgroundColor: Colors.indigo,
         centerTitle: true,
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
-
       body: ListView(
-        padding: EdgeInsets.all(12),
+        padding: const EdgeInsets.all(16),
         children: [
-
-
-          Card(
-            elevation: 5,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: Container(
-              width: double.infinity,
-              padding: EdgeInsets.all(20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Pran",
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  SizedBox(height: 10),
-                  Text("Payment: 5000", style: normalText),
-                  Text("Requirement:", style: normalText),
-                  Text("1. Followers: 1000", style: normalText),
-                  Text(
-                    "Experience: Working with 3 brands at least",
-                    style: normalText,
-                  ),
-                ],
-              ),
-            ),
+          buildJobCard(
+            "Pran",
+            "Payment: 5000",
+            "Followers: 1000",
+            "Experience: Working with 3 brands at least",
           ),
-
-          SizedBox(height: 10),
-          Card(
-            elevation: 6,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Container(
-              width: double.infinity,
-              padding: EdgeInsets.all(16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Aarong",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 30,
-                    ),
-                  ),
-                  SizedBox(height: 10),
-                  Text("Payment: 10000", style: normalText),
-                  Text("Requirements:", style: normalText),
-                  Text("1. Followers: 10000", style: normalText),
-                  Text(
-                    "Experience: Working with 3 brands at least",
-                    style: normalText,
-                  ),
-                ],
-              ),
-            ),
+          const SizedBox(height: 16),
+          buildJobCard(
+            "Aarong",
+            "Payment: 10000",
+            "Followers: 10000",
+            "Experience: Working with 3 brands at least",
           ),
-
-          SizedBox(height: 10),
-
-
-          Card(
-            elevation: 6,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Container(
-              width: double.infinity,
-              padding: EdgeInsets.all(16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "TWELVE",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 30,
-                    ),
-                  ),
-                  SizedBox(height: 10),
-                  Text("Payment: 8000", style: normalText),
-                  Text("Requirements:", style: normalText),
-                  Text("1. Followers: 5000", style: normalText),
-                  Text(
-                    "Experience: Worked with fashion brands",
-                    style: normalText,
-                  ),
-                ],
-              ),
-            ),
+          const SizedBox(height: 16),
+          buildJobCard(
+            "TWELVE",
+            "Payment: 8000",
+            "Followers: 5000",
+            "Experience: Worked with fashion brands",
           ),
-
-          SizedBox(height: 10),
-
-          Card(
-            elevation: 6,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Container(
-              width: double.infinity,
-              padding: EdgeInsets.all(16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Le Reve",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 30,
-                    ),
-                  ),
-                  SizedBox(height: 10),
-                  Text("Payment: 12000", style: normalText),
-                  Text("Requirements:", style: normalText),
-                  Text("1. Followers: 15000", style: normalText),
-                  Text(
-                    "Experience: Worked with premium brands",
-                    style: normalText,
-                  ),
-                ],
-              ),
-            ),
+          const SizedBox(height: 16),
+          buildJobCard(
+            "Le Reve",
+            "Payment: 12000",
+            "Followers: 15000",
+            "Experience: Worked with premium brands",
           ),
-
         ],
+      ),
+    );
+  }
+
+  Widget buildJobCard(
+      String brand,
+      String payment,
+      String followers,
+      String experience,
+      ) {
+    return Card(
+      margin: EdgeInsets.zero,
+      shape: RoundedRectangleBorder(
+        side: const BorderSide(color: Colors.indigo, width: 2),
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              brand,
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 6),
+            Text(payment),
+            const SizedBox(height: 6),
+            Text(followers),
+            const SizedBox(height: 6),
+            Text(experience),
+          ],
+        ),
       ),
     );
   }
